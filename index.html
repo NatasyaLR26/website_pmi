@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Palang Merah Indonesia (PMI)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0; 
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background: #d71921;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 600;
+      font-size: 2.6em;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-weight: 300;
+      font-size: 1.2em;
+    }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      color: #d71921;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    p {
+      line-height: 1.6;
+      font-weight: 300;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    .service-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #b2131b;
+    }
+    .btn-donate {
+      display: inline-block;
+      background: #b2131b;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 25px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-donate:hover {
+      background: #d71921;
+    }
+    footer {
+      background: #222;
+      color: #aaa;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 80px;
+      font-size: 0.9em;
+    }
+    @media(max-width: 480px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      .btn-donate {
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Palang Merah Indonesia</h1>
+  <p>Melayani Kemanusiaan dengan Tulus dan Cepat</p>
+</header>
+
+<section id="about">
+  <h2>Tentang PMI</h2>
+  <p>Palang Merah Indonesia (PMI) adalah organisasi sosial kemanusiaan yang bergerak di bidang pelayanan kesehatan dan kemanusiaan. PMI berkomitmen membantu masyarakat yang membutuhkan bantuan, khususnya saat bencana dan kondisi darurat. Melalui donor darah, bantuan bencana, pertolongan pertama, dan edukasi, PMI hadir untuk menyelamatkan nyawa.</p>
+</section>
+
+<section id="services">
+  <h2>Layanan Kami</h2>
+  <div class="services">
+    <div class="service-card">
+      <h3>Donor Darah</h3>
+      <p>Program rutin pengumpulan darah dari relawan untuk memenuhi kebutuhan darah rumah sakit dan pasien di seluruh Indonesia.</p>
+    </div>
+    <div class="service-card">
+      <h3>Bantuan Bencana</h3>
+      <p>PMI siap memberikan bantuan cepat dan tanggap saat terjadi bencana alam seperti banjir, gempa, dan kebakaran.</p>
+    </div>
+    <div class="service-card">
+      <h3>Pelayanan Kesehatan</h3>
+      <p>Menyelenggarakan posko kesehatan, penyuluhan, dan pelatihan pertolongan pertama di berbagai daerah.</p>
+    </div>
+    <div class="service-card">
+      <h3>Edukasi dan Sosialisasi</h3>
+      <p>Mengedukasi masyarakat tentang kesehatan, kebencanaan, dan pentingnya menjadi relawan dalam berbagai kegiatan kemanusiaan.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Hubungi Kami</h2>
+  <p>Jika Anda ingin bergabung sebagai relawan atau berdonasi, silakan hubungi:</p>
+  <p>Email: <a href="mailto:info@pmi.or.id">info@pmi.or.id</a><br />
+  Telepon: +62-21-12345678<br />
+  Alamat: Jl. Jend. Gatot Subroto Kav. 96, Jakarta Selatan, Indonesia</p>
+  <a href="https://donor.pmi.or.id" target="_blank" class="btn-donate" rel="noopener noreferrer">Donasi Sekarang</a>
+</section>
+
+<footer>
+  &copy; 2024 Palang Merah Indonesia (PMI). Semua hak cipta dilindungi.
+</footer>
+
+</body>
+</html>
