@@ -3,147 +3,846 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Palang Merah Indonesia (PMI)</title>
+  <title>PMI Payakumbuh - Palang Merah Indonesia Kota Payakumbuh</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin: 0; 
-      font-family: 'Poppins', sans-serif;
-      background: #f8f9fa;
-      color: #333;
-    }
-    header {
-      background: #d71921;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    }
-    header h1 {
+    * {
       margin: 0;
-      font-weight: 600;
-      font-size: 2.6em;
+      padding: 0;
+      box-sizing: border-box;
     }
-    header p {
-      margin: 5px 0 0;
-      font-weight: 300;
-      font-size: 1.2em;
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      color: #333;
+      line-height: 1.6;
     }
-    section {
-      max-width: 900px;
-      margin: 40px auto;
+
+    /* Navigation */
+    nav {
+      background: rgba(215, 25, 33, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 0 20px;
     }
-    h2 {
+    
+    .logo {
+      color: white;
+      font-weight: 700;
+      font-size: 1.4em;
+      text-decoration: none;
+    }
+    
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-menu a:hover {
+      color: #ffebec;
+    }
+    
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: white;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #d71921 0%, #b2131b 100%);
+      color: white;
+      padding: 120px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>') repeat;
+      animation: float 20s infinite linear;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-100px); }
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero h1 {
+      font-size: 3.5em;
+      font-weight: 700;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease;
+    }
+    
+    .hero .subtitle {
+      font-size: 1.4em;
+      font-weight: 300;
+      margin-bottom: 10px;
+      animation: fadeInUp 1s ease 0.2s both;
+    }
+    
+    .hero .location {
+      font-size: 1.1em;
+      opacity: 0.9;
+      font-weight: 400;
+      animation: fadeInUp 1s ease 0.4s both;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Sections */
+    section {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+    
+    .section-title {
       color: #d71921;
       font-weight: 600;
-      margin-bottom: 15px;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
     }
-    p {
-      line-height: 1.6;
-      font-weight: 300;
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #d71921, #b2131b);
+      border-radius: 2px;
     }
-    .services {
+    
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.1em;
+      color: #666;
+      margin-bottom: 50px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* About Section */
+    .about-content {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 25px;
-      margin-top: 30px;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
     }
-    .service-card {
+    
+    .about-text {
+      font-size: 1.1em;
+      line-height: 1.8;
+    }
+    
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    
+    .stat-card {
       background: white;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
+    
+    .stat-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .stat-number {
+      font-size: 2.5em;
+      font-weight: 700;
+      color: #d71921;
+      display: block;
+    }
+    
+    .stat-label {
+      color: #666;
+      font-weight: 400;
+      margin-top: 5px;
+    }
+
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #d71921, #b2131b);
+    }
+    
     .service-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(215, 25, 33, 0.15);
     }
-    .service-card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      color: #b2131b;
-    }
-    .btn-donate {
-      display: inline-block;
-      background: #b2131b;
+    
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #d71921, #b2131b);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.5em;
       color: white;
-      padding: 15px 30px;
-      border-radius: 30px;
+    }
+    
+    .service-card h3 {
+      color: #d71921;
+      font-weight: 600;
+      font-size: 1.3em;
+      margin-bottom: 15px;
+    }
+    
+    .service-card p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-top: 50px;
+    }
+    
+    .contact-info {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-item:hover {
+      background: #fff5f5;
+      transform: translateX(5px);
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #d71921, #b2131b);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      color: white;
+      font-size: 1.2em;
+    }
+    
+    .contact-text h4 {
+      color: #d71921;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    
+    .contact-text p {
+      color: #666;
+      margin: 0;
+    }
+    
+    .contact-form {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-group label {
+      display: block;
+      color: #d71921;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #e9ecef;
+      border-radius: 12px;
+      font-family: 'Poppins', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #d71921;
+    }
+    
+    .form-group textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 15px 35px;
+      border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
-      margin-top: 25px;
-      transition: background-color 0.3s ease;
+      font-size: 1.1em;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
     }
-    .btn-donate:hover {
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #d71921, #b2131b);
+      color: white;
+      box-shadow: 0 10px 30px rgba(215, 25, 33, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(215, 25, 33, 0.4);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: #d71921;
+      border: 2px solid #d71921;
+    }
+    
+    .btn-outline:hover {
       background: #d71921;
+      color: white;
+      transform: translateY(-3px);
     }
+
+    /* Footer */
     footer {
-      background: #222;
-      color: #aaa;
-      text-align: center;
-      padding: 20px 10px;
-      margin-top: 80px;
-      font-size: 0.9em;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+      padding: 60px 20px 30px;
+      margin-top: 100px;
     }
-    @media(max-width: 480px) {
-      header h1 {
-        font-size: 1.8em;
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-section h3 {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 1.3em;
+    }
+    
+    .footer-section p,
+    .footer-section a {
+      color: #bdc3c7;
+      text-decoration: none;
+      line-height: 1.8;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-section a:hover {
+      color: #fff;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #34495e;
+      color: #95a5a6;
+    }
+
+    /* Mobile Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
       }
-      .btn-donate {
-        padding: 12px 20px;
+      
+      .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(215, 25, 33, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 30px 0;
       }
+      
+      .nav-menu.active {
+        left: 0;
+      }
+      
+      .hero h1 {
+        font-size: 2.5em;
+      }
+      
+      .hero .subtitle {
+        font-size: 1.2em;
+      }
+      
+      .about-content,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .about-stats {
+        grid-template-columns: 1fr;
+      }
+      
+      .services {
+        grid-template-columns: 1fr;
+      }
+      
+      .section-title {
+        font-size: 2em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 100px 20px 60px;
+      }
+      
+      .hero h1 {
+        font-size: 2em;
+      }
+      
+      section {
+        margin: 50px auto;
+      }
+      
+      .service-card,
+      .contact-info,
+      .contact-form {
+        padding: 25px 20px;
+      }
+    }
+
+    /* Scroll animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Palang Merah Indonesia</h1>
-  <p>Melayani Kemanusiaan dengan Tulus dan Cepat</p>
-</header>
+<nav>
+  <div class="nav-container">
+    <a href="#" class="logo">PMI Payakumbuh</a>
+    <ul class="nav-menu">
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#services">Layanan</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
 
-<section id="about">
-  <h2>Tentang PMI</h2>
-  <p>Palang Merah Indonesia (PMI) adalah organisasi sosial kemanusiaan yang bergerak di bidang pelayanan kesehatan dan kemanusiaan. PMI berkomitmen membantu masyarakat yang membutuhkan bantuan, khususnya saat bencana dan kondisi darurat. Melalui donor darah, bantuan bencana, pertolongan pertama, dan edukasi, PMI hadir untuk menyelamatkan nyawa.</p>
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>PMI Payakumbuh</h1>
+    <p class="subtitle">Palang Merah Indonesia Kota Payakumbuh</p>
+    <p class="location">Melayani Kemanusiaan di Payakumbuh, Sumatera Barat</p>
+  </div>
 </section>
 
-<section id="services">
-  <h2>Layanan Kami</h2>
-  <div class="services">
-    <div class="service-card">
-      <h3>Donor Darah</h3>
-      <p>Program rutin pengumpulan darah dari relawan untuk memenuhi kebutuhan darah rumah sakit dan pasien di seluruh Indonesia.</p>
+<section id="about" class="fade-in">
+  <h2 class="section-title">Tentang PMI Payakumbuh</h2>
+  <p class="section-subtitle">Melayani masyarakat Payakumbuh dan sekitarnya dengan dedikasi tinggi</p>
+  
+  <div class="about-content">
+    <div class="about-text">
+      <p>PMI Payakumbuh adalah cabang Palang Merah Indonesia yang bertugas melayani masyarakat Kota Payakumbuh dan sekitarnya. Sebagai organisasi kemanusiaan, kami berkomitmen memberikan pelayanan terbaik dalam bidang kesehatan, kebencanaan, dan kegiatan sosial kemanusiaan.</p>
+      
+      <p>Dengan dukungan relawan yang berpengalaman dan fasilitas yang memadai, PMI Payakumbuh siap memberikan bantuan cepat dan tepat sasaran kepada masyarakat yang membutuhkan, khususnya dalam situasi darurat dan bencana.</p>
+      
+      <div style="margin-top: 30px;">
+        <a href="#services" class="btn btn-primary">Lihat Layanan Kami</a>
+        <a href="#contact" class="btn btn-outline" style="margin-left: 15px;">Hubungi Kami</a>
+      </div>
     </div>
-    <div class="service-card">
-      <h3>Bantuan Bencana</h3>
-      <p>PMI siap memberikan bantuan cepat dan tanggap saat terjadi bencana alam seperti banjir, gempa, dan kebakaran.</p>
-    </div>
-    <div class="service-card">
-      <h3>Pelayanan Kesehatan</h3>
-      <p>Menyelenggarakan posko kesehatan, penyuluhan, dan pelatihan pertolongan pertama di berbagai daerah.</p>
-    </div>
-    <div class="service-card">
-      <h3>Edukasi dan Sosialisasi</h3>
-      <p>Mengedukasi masyarakat tentang kesehatan, kebencanaan, dan pentingnya menjadi relawan dalam berbagai kegiatan kemanusiaan.</p>
+    
+    <div class="about-stats">
+      <div class="stat-card">
+        <span class="stat-number">500+</span>
+        <p class="stat-label">Relawan Aktif</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">1000+</span>
+        <p class="stat-label">Donor Darah/Tahun</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">24/7</span>
+        <p class="stat-label">Siaga Darurat</p>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">15+</span>
+        <p class="stat-label">Tahun Pengalaman</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Hubungi Kami</h2>
-  <p>Jika Anda ingin bergabung sebagai relawan atau berdonasi, silakan hubungi:</p>
-  <p>Email: <a href="mailto:info@pmi.or.id">info@pmi.or.id</a><br />
-  Telepon: +62-21-12345678<br />
-  Alamat: Jl. Jend. Gatot Subroto Kav. 96, Jakarta Selatan, Indonesia</p>
-  <a href="https://donor.pmi.or.id" target="_blank" class="btn-donate" rel="noopener noreferrer">Donasi Sekarang</a>
+<section id="services" class="fade-in">
+  <h2 class="section-title">Layanan PMI Payakumbuh</h2>
+  <p class="section-subtitle">Berbagai layanan kemanusiaan untuk masyarakat Payakumbuh</p>
+  
+  <div class="services">
+    <div class="service-card">
+      <div class="service-icon">🩸</div>
+      <h3>Donor Darah Rutin</h3>
+      <p>Mengadakan kegiatan donor darah rutin setiap bulan di berbagai lokasi di Payakumbuh untuk memenuhi kebutuhan stok darah PMI dan rumah sakit di wilayah Payakumbuh.</p>
+    </div>
+    
+    <div class="service-card">
+      <div class="service-icon">🚨</div>
+      <h3>Tanggap Darurat</h3>
+      <p>Tim siaga 24 jam untuk memberikan bantuan cepat saat terjadi bencana alam, kecelakaan, atau situasi darurat lainnya di wilayah Payakumbuh dan sekitarnya.</p>
+    </div>
+    
+    <div class="service-card">
+      <div class="service-icon">🏥</div>
+      <h3>Layanan Kesehatan</h3>
+      <p>Menyediakan layanan kesehatan dasar, pemeriksaan kesehatan gratis, dan penyuluhan kesehatan untuk masyarakat kurang mampu di Payakumbuh.</p>
+    </div>
+    
+    <div class="service-card">
+      <div class="service-icon">🎓</div>
+      <h3>Pelatihan P3K</h3>
+      <p>Mengadakan pelatihan pertolongan pertama pada kecelakaan (P3K) untuk masyarakat umum, sekolah, dan instansi di Payakumbuh.</p>
+    </div>
+    
+    <div class="service-card">
+      <div class="service-icon">🤝</div>
+      <h3>Bakti Sosial</h3>
+      <p>Kegiatan bakti sosial rutin seperti santunan anak yatim, bantuan untuk keluarga kurang mampu, dan program pemberdayaan masyarakat.</p>
+    </div>
+    
+    <div class="service-card">
+      <div class="service-icon">🌊</div>
+      <h3>Mitigasi Bencana</h3>
+      <p>Edukasi dan sosialisasi tentang kesiapsiagaan bencana, serta pelatihan evakuasi untuk masyarakat di daerah rawan bencana.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="fade-in">
+  <h2 class="section-title">Hubungi PMI Payakumbuh</h2>
+  <p class="section-subtitle">Siap melayani Anda 24 jam untuk situasi darurat</p>
+  
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-text">
+          <h4>Alamat Kantor</h4>
+          <p>Jl. Soekarno Hatta No. 45<br>Payakumbuh, Sumatera Barat 26213</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div class="contact-text">
+          <h4>Telepon</h4>
+          <p>Kantor: (0752) 123-4567<br>Darurat: 0812-3456-7890</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-text">
+          <h4>Email</h4>
+          <p>info.payakumbuh@pmi.or.id<br>darurat.payakumbuh@pmi.or.id</p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">🕒</div>
+        <div class="contact-text">
+          <h4>Jam Operasional</h4>
+          <p>Senin - Jumat: 08:00 - 16:00<br>Darurat: 24 Jam</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="contact-form">
+      <h3 style="color: #d71921; margin-bottom: 25px;">Kirim Pesan</h3>
+      <form>
+        <div class="form-group">
+          <label for="name">Nama Lengkap</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Nomor Telepon</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        
+        <div class="form-group">
+          <label for="subject">Subjek</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Pesan</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Pesan</button>
+      </form>
+    </div>
+  </div>
 </section>
 
 <footer>
-  &copy; 2024 Palang Merah Indonesia (PMI). Semua hak cipta dilindungi.
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>PMI Payakumbuh</h3>
+      <p>Palang Merah Indonesia Kota Payakumbuh berkomitmen melayani kemanusiaan dengan sepenuh hati. Bersama membangun masyarakat yang peduli dan siaga.</p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Layanan Utama</h3>
+      <p><a href="#services">Donor Darah</a></p>
+      <p><a href="#services">Tanggap Darurat</a></p>
+      <p><a href="#services">Layanan Kesehatan</a></p>
+      <p><a href="#services">Pelatihan P3K</a></p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Kontak Darurat</h3>
+      <p>📞 Hotline: 0812-3456-7890</p>
+      <p>✉️ darurat.payakumbuh@pmi.or.id</p>
+      <p>📍 Jl. Soekarno Hatta No. 45, Payakumbuh</p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Bergabung Bersama Kami</h3>
+      <p>Jadilah bagian dari gerakan kemanusiaan PMI Payakumbuh</p>
+      <a href="#contact" class="btn btn-outline" style="margin-top: 15px;">Daftar Relawan</a>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2024 PMI Payakumbuh - Palang Merah Indonesia Kota Payakumbuh. Semua hak cipta dilindungi.</p>
+  </div>
 </footer>
+
+<script>
+  // Mobile Navigation
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // Smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+      // Close mobile menu
+      navMenu.classList.remove('active');
+      hamburger.classList.remove('active');
+    });
+  });
+
+  // Scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Form submission
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Terima kasih! Pesan Anda telah dikirim. Tim PMI Payakumbuh akan segera menghubungi Anda.');
+  });
+
+  // Active navigation highlight based on scroll
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const sections = document.querySelectorAll('section[id]');
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
